@@ -1,0 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 0;
+}
+
+nav {
+    background-color: #000000; /* Warna latar belakang navbar */
+}
+
+.biasa {
+    width: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+    list-style-type: none;
+}
+
+a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    
+}
+
+a:hover {
+    background-color: #ddd; /* Warna latar belakang saat cursor diarahkan ke link */
+    color: black;}
+.waru4 {
+    color: yellow;
+    font-size: 30px;
+}
+
+.logo{
+    flex-direction: row;
+}
+
+.waru3 {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+
+.WARU {
+    display: flex;
+    margin-right: 780px;
+    font-size: 20px;
+    padding: 8px;
+}
+
+.waru2{
+    color: #ddd;
+}
+
+.footer-bottom{
+    margin-top: 0px;
+    text-align: center;
+    background-color: #000000;
+}
+
+.footer-bottom p {
+    font-size: 0.8em;
+    color: #ddd;
+}
+
+/*BAGIAN TENGAH BODY*/
+
+.sakit1{
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header0.btn{
+    align-items: center;
+    font-size: 20px ;
+}
+
+.header0 {
+    background-color: aliceblue;
+    background-size: cover;
+    background-attachment: fixed;
+    width: auto;
+    height: 85vh;
+}
+
+.fadil {
+    color: aqua;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .gambar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgb(9, 24, 107);
+  }
+  
+  .content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgba(3, 3, 3, 0.785);
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-top: 60px;
+    background-color: rgba(0, 0, 0, 0.574);
+    color: rgba(255, 255, 255, 0.698);
+    text-decoration: none;
+    border-radius: 4px;
+  }
+
+  .bagian-akhir{
+    text-align: center;
+    background-color: rgb(223, 252, 243);
+    border-radius: 20px;
+  }
+  
+  .alhamdulillah {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border-radius: 5px;
+    top: 10%;
+  }
+
+.part2 {
+    display: flex;
+}
+
+.akusa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.j {
+    display: flex;
+    flex-direction: row;
+    top: 40px;
+    background-size: cover;
+}
+
+.r {
+    background-color: rgba(233, 1, 1, 0.112);
+    width: 150%;
+    margin: 100px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    scale: 0.47;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.judulr {
+    font-size: 70px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 4%;
+    padding-bottom: 4px;
+}
+
+.paragrafr {
+    font-size: 30px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 10%;
+    text-align: center;
+    color: #ddd;
+}
+
+.alat1{
+    text-align: center;
+    justify-content: center;
+}
+
+.cover {
+    display: flex;
+    flex-direction: row;
+}
+
+.budal {
+    font-size: 40px;
+    margin-top: 80px;
+    margin-left: 60px;
+}
+
+.paragraf {
+    font-size: 26px;
+    padding-left: 5%;
+    padding-right: 45%;
+    padding-top: 0;
+    padding-right: 10%;
+}
+
+.feature {
+    margin: 70px;
+    padding: 70px;
+    box-shadow: 0 0 10px rgb(139, 9, 9);
+    border-radius: 40px;
+    background-image: url("img/Gambar mobil most wanted.jpeg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature22 {
+    margin: 70px;
+    padding: 70px;
+    box-shadow: 0 0 10px rgb(139, 9, 9);
+    border-radius: 40px;
+    background-image: url("img/Lamborghini Lambo V12 Vision GT Photo Gallery.jpeg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature33 {
+    margin: 70px;
+    padding: 70px;
+    box-shadow: 0 0 10px rgb(139, 9, 9);
+    border-radius: 40px;
+    background-image: url("img/Camaro _Turbo_ Bertenaga Monster.jpeg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature44 {
+    margin: 70px;
+    padding: 70px;
+    box-shadow: 0 0 10px rgb(139, 9, 9);
+    border-radius: 20px;
+    background-image: url("img/WhatsApp Image 2023-11-29 at 12.44.26_25a2f231.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.palalu {
+    padding-left: 350px;
+}
+
+.mambu {
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgb(116, 35, 35);
+    border-radius: 40px;
+    background-color: #dddddd0f;
+
+}
+
+.gedangan2 {
+    color: #ddd;
+    align-items: center;
+    margin-top: 30px;
+    font-size: 26px;
+}
+
+.feature2 {
+    box-shadow: 0 0 10px rgb(9, 24, 107);
+    border-radius: 40px;
+}
+
+.feature3{
+    box-shadow: 0 0 10px rgb(9, 24, 107);
+    border-radius: 10px;
+    background-color: #dddddd4b;
+}
+
+.biodatasaya{
+    box-shadow: 0 0 10px rgb(9, 24, 107);
+    border-radius: 10px;
+    background-color: #dddddd4b;
+    width: 400px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.footer-ahay {
+    background-color:white ;
+    color: #000000;
+    text-align: center;
+}
+
+.gambar-biodata {
+    box-shadow: 0 0 10px rgb(160, 0, 0);
+    border-radius: 80px;
+}
+
+.feature5{
+    margin-top: 40px;
+    color: #ddd;
+}
+
+.anjay1{
+    display: inline-block;
+    padding: 5px 10px;
+    margin-top: 60px;
+    background-color: rgba(0, 0, 0, 0.574);
+    color: rgba(255, 255, 255, 0.698);
+    text-decoration: none;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.anjay2{
+    display: inline-block;
+    padding: 5px 10px;
+    margin-top: 60px;
+    background-color: rgba(0, 0, 0, 0.574);
+    color: rgba(255, 255, 255, 0.698);
+    text-decoration: none;
+    border-radius: 4px;
+    align-items: center;
+    
+}
+
+.anjay3{
+    display: inline-block;
+    padding: 5px 10px;
+    margin-top: 60px;
+    background-color: rgba(0, 0, 0, 0.574);
+    color: rgba(255, 255, 255, 0.698);
+    text-decoration: none;
+    border-radius: 4px;
+    align-items: center;
+}
