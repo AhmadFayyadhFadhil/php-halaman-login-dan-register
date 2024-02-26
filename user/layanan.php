@@ -35,7 +35,7 @@
                     <p class="feature3">Cuci steam mobil bisa menjadi pilihan jika ingin mendapatkan hasil yang maksimal dan menyeluruh, bahkan bisa membersihkan sela-sela mobil. Untuk melakukannya, digunakan mesin steam atau mesin angin (kompresor).
 
                         Mesin tersebut memiliki tekanan yang tinggi sehingga menghasilkan semburan air yang kuat. Dengan begitu, berbagai jenis kotoran yang menempel di mobil bisa dengan mudah terangkat dan memberikan hasil yang lebih bersih.</p>
-                        <a class="anjay1" href="img/https://www.astra-daihatsu.id/berita-dan-tips/Rutin-Cuci-Steam-Mobil-Apa-Manfaat-dan-Efeknya">clik untuk informasi lebih lengkap</a>
+                        <a class="anjay1" href="https://www.astra-daihatsu.id/berita-dan-tips/Rutin-Cuci-Steam-Mobil-Apa-Manfaat-dan-Efeknya">clik untuk informasi lebih lengkap</a>
                 </div>
 
                 <div class="feature22">
@@ -44,7 +44,7 @@
                     <p  class="feature3">Salon interior mobil biasa dikenal juga dengan salon atau spa mobil. Seperti namanya, jenis perawatan yang ditawarkan pun bukan sekadar membersihkan kotoran yang menempel saja melainkan hingga membuat penampilan kendaraan lebih menarik.
 
                         Berbeda dengan membersihkan mobil di bengkel, salon mobil membersihkan lebih rinci. Tidak hanya membersihkan debu, namun juga membersihkan noda membandel, jamur, noda asam akibat hujan, baret halus, bahkan mengembalikan warna interior yang mulai pudar.</p>
-                        <a class="anjay2" href="img/https://otoklix.com/blog/salon-interior-mobil/">clik untuk informasi lebih lengkap</a>
+                        <a class="anjay2" href="https://otoklix.com/blog/salon-interior-mobil">clik untuk informasi lebih lengkap</a>
                 </div>
 
                 <div class="feature33">
@@ -56,8 +56,6 @@
                         <a class="anjay3" href="https://www.carsome.id/news/item/service-mobil-berkala">clik untuk informasi lebih lengkap</a>
                 </div>
     </section>
-
-
 
 
     <div class="footer-bottom">
