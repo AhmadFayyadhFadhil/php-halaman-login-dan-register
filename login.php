@@ -29,7 +29,7 @@ if($cek > 0){
         $_SESSION['level'] ="user";
 
         // alihkan ke halaman login kembali
-        header("location:user/alatdan bahan.php");
+        header("location:user/TA2DASPROG.php");
     }
     }else{
         header("location:index.php?pesan=gagal");
