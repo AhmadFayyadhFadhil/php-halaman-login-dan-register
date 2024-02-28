@@ -20,7 +20,7 @@ if($cek > 0){
         $_SESSION['username'] = $username;
         $_SESSION['LEVEL'] = "admin";
         // alihkan ke halaman daashboard admin
-        header("location:admin/index.php");
+        header("location:admin/user.php");
 
         // cek jika user login sebagai user
     }else if($data['level']=="user"){
