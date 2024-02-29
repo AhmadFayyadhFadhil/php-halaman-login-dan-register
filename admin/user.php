@@ -9,16 +9,18 @@
 </head>
 <body>
     <section class="user">
-    <h1 class="heading">Data User</h1>
-    <br>
+        <h1 class="heading">Data User</h1>
+        <br>
         <a href="../register.php" class="btn">Tambah User</a>
         <br>
         <br>
         <table border="1" class="table">
             <tr>
+                <th>User ID</th>
                 <th>Nama</th>
                 <th>Username</th>
                 <th>Password</th>
+                <th>Action</th> 
             </tr>
             <?php
             include '../koneksi.php';
@@ -27,20 +29,21 @@
             while($data = mysqli_fetch_array($query_mysql)) { 
             ?>
             <tr>
-                <td><?php echo $nomor++; ?></td>
+                <td><?php echo $data['userid']; ?></td>
                 <td><?php echo $data['nama']; ?></td>
                 <td><?php echo $data['username']; ?></td>
                 <td><?php echo $data['password']; ?></td>
-                <td><a href="hapususer.php?id=<?php echo $data['nama']; ?>" class="btn-hapus">Hapus</a> <!-- Tombol hapus --></td>
-                <td><a href="updateuser.php?id=<?php echo $data['nama']; ?>" class="btn-update">Update</a> <!-- Tombol update --></td>
+                <td>
+                    <a href="hapususer.php?id=<?php echo $data['userid']; ?>" class="btn-hapus">Hapus</a> 
+                    <a href="updateuser.php?id=<?php echo $data['userid']; ?>" class="btn-update">Update</a> 
+                </td>
             </tr>
             <?php } ?>
         </table>
         <br>
         <br>
-    <a href="../index.php" class="btn">Log Out</a>
+        <a href="../index.php" class="btn">Log Out</a>
     </section>
-    
 
     <script src="main.js"></script>
 </body>
