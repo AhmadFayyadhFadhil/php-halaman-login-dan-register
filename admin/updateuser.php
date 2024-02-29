@@ -12,14 +12,14 @@ if(isset($_POST['update'])) {
 
     if($result) {
         echo "Data berhasil diperbarui.";
-        header("Location: user.php"); // Redirect kembali ke halaman data user
+        header("Location: user.php");
         exit();
     } else {
         echo "Terjadi kesalahan: " . mysqli_error($mysqli);
     }
 }
 
-// Mendapatkan data user yang akan diupdate
+
 if(isset($_GET['id'])) {
     $userid = $_GET['id'];
     $query = "SELECT * FROM user WHERE userid=$userid";
