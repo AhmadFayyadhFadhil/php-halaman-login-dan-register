@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="styleadmin.css">
 </head>
 <body>
+
+<nav class="navbar">
+        <div class="container">
+            <ul class="navbar-menu">
+                <li><a href="#">Mobil</a></li>
+                <li><a href="#">Layanan</a></li>
+                <li><a href="#">Pegawai</a></li>
+                <li><a href="#">Transaksi</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <section class="user">
         <h1 class="heading">Data User</h1>
         <br>
