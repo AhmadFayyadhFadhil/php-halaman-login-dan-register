@@ -9,13 +9,15 @@
 </head>
 <body>
 
+
 <nav class="navbar">
         <div class="container">
             <ul class="navbar-menu">
-                <li><a href="#">Mobil</a></li>
-                <li><a href="#">Layanan</a></li>
-                <li><a href="#">Pegawai</a></li>
-                <li><a href="#">Transaksi</a></li>
+                <li><a href="user.php">USER</a></li>
+                <li><a href="#">MOBIL</a></li>
+                <li><a href="#">LAYANAN</a></li>
+                <li><a href="#">PEGAWAI</a></li>
+                <li><a href="#">TRANSAKSI</a></li>
             </ul>
         </div>
     </nav>
