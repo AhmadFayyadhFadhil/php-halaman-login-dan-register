@@ -1,7 +1,7 @@
 <?php
 include '../koneksi.php';
 
-if(isset($_POST['update'])) {
+    if(isset($_POST['update'])) {
     $userid = $_POST['userid'];
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -20,15 +20,7 @@ if(isset($_POST['update'])) {
 }
 
 
-if(isset($_GET['id'])) {
-    $userid = $_GET['id'];
-    $query = "SELECT * FROM user WHERE userid=$userid";
-    $result = mysqli_query($mysqli, $query);
-    $data = mysqli_fetch_assoc($result);
-} else {
-    echo "ID user tidak ditemukan.";
-    exit();
-}
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">

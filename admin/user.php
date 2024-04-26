@@ -14,9 +14,8 @@
         <div class="container">
             <ul class="navbar-menu">
                 <li><a href="user.php">USER</a></li>
-                <li><a href="#">MOBIL</a></li>
+                <li><a href="mobil/mobil.php">MOBIL</a></li>
                 <li><a href="#">LAYANAN</a></li>
-                <li><a href="#">PEGAWAI</a></li>
                 <li><a href="#">TRANSAKSI</a></li>
             </ul>
         </div>
