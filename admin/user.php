@@ -36,7 +36,7 @@
                 <th>Action</th> 
             </tr>
             <?php
-            include '../koneksi.php';
+            include 'koneksi1.php';
             $query_mysql = mysqli_query($mysqli, "SELECT * FROM user") or die(mysqli_error($mysqli));
             $nomor = 1;
             while($data = mysqli_fetch_array($query_mysql)) { 
@@ -48,7 +48,8 @@
                 <td><?php echo $data['password']; ?></td>
                 <td>
                     <a href="hapususer.php?id=<?php echo $data['userid']; ?>" class="btn-hapus">Hapus</a> 
-                    <a href="updateuser.php?id=<?php echo $data['userid']; ?>" class="btn-update">Update</a> 
+                    <a href='updateuser.php?id=<?php echo $data['userid']; ?>' class="btn-update">Update 
+                </a> 
                 </td>
             </tr>
             <?php } ?>

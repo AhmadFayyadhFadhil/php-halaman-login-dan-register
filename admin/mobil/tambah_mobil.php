@@ -2,7 +2,7 @@
 include "koneksi.php";
 
 if(isset($_POST['submit'])) {
-    $jenis_mobil = 
+    $jenis_mobil = mysqli_real_escape_string($mysqli, $_POST['jenis_mobil']);
     $plat_mobil = mysqli_real_escape_string($mysqli, $_POST['plat_mobil']);
     $merk = mysqli_real_escape_string($mysqli, $_POST['merk']);
     $pemilik_mobil = mysqli_real_escape_string($mysqli, $_POST['pemilik_mobil']);

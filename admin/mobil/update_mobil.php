@@ -10,12 +10,13 @@ if (isset($_POST['update'])) {
     $pemilik_kendaraan = $_POST['pemilik_kendaraan'];
 
     // Hapus kolom username, password, dan userid
-    $query = "UPDATE mobil SET jenis_mobil='$jenis_mobil', plat_mobil='$plat_mobil', merk='$merk', pemilik_kendaraan='$pemilik_kendaraan' WHERE id_mobil=$id_mobil";
+    $query = "UPDATE mobil SET jenis_mobil='$jenis_mobil', plat_mobil='$plat_mobil', merk='$merk', pemilik_kendaraan='$pemilik_kendaraan', userid=1 WHERE id_mobil='$id_mobil'";
+    // $result = mysql_query($mysqli,"UPDATE mobil SET jenis_mobil='$jenis_mobil', plat_mobil='$plat_mobil', merk='$merk', pemilik_kendaraan='$pemilik_kendaraan' WHERE id_mobil=$id_mobil");
     $result = mysqli_query($mysqli, $query);
 
     if($result) {
         echo "Data berhasil diperbarui.";
-        header("Location: ../mobil.php");
+        header("Location: ../mobil/mobil.php");
         exit();
     } else {
         echo "Terjadi kesalahan: " . mysqli_error($mysqli);
@@ -42,7 +43,7 @@ if (isset($_POST['update'])) {
             <h1 class="title">Update Mobil</h1>
         </header>
         <section class="form">
-        <form method="POST" action="">
+        <form method="POST" action="update_mobil.php">
         <input type="hidden" name="id_mobil" value="<?php echo isset($data['id_mobil']) ? $data['id_mobil'] : ''; ?>">
 
         <label for="jenis_mobil">jenis_mobil</label><br>

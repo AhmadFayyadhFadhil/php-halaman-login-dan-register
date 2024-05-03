@@ -1,26 +1,24 @@
-<?php
-include '../koneksi.php';
+<?php 
 
-    if(isset($_POST['update'])) {
-    $userid = $_POST['userid'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+include ("koneksi1.php");
 
-    
-    $query = "UPDATE user SET username='$username', password='$password' WHERE userid=$userid";
-    $result = mysqli_query($mysqli, $query);
+//kalau tidak ada id di query string
+if(!isset($_GET['id'])){
+    header('Location: user.php');
+}
+$userid = $_GET['id'];
 
-    if($result) {
-        echo "Data berhasil diperbarui.";
-        header("Location: user.php");
-        exit();
-    } else {
-        echo "Terjadi kesalahan: " . mysqli_error($mysqli);
-    }
+// Fetech usser data based on id
+$result = mysqli_query($mysqli, "SELECT * FROM user WHERE userid=$userid");
+
+while($user_data = mysqli_fetch_array($result))
+{
+    $nama =  $user_data['nama'];
+    $username =  $user_data['username'];
+    $password =  $user_data['password'];
+    $level =  $user_data['level'];
 }
 
-
- 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,25 +34,42 @@ include '../koneksi.php';
     <header>
         <h1 class="title">Update User</h1>
     </header>
-    <section class="form">
-        <form method="POST" action="">
-            <input type="hidden" name="userid" value="<?php echo $data['userid']; ?>">
-            
-            
-            <label for="nama">Nama:</label><br>
-            <input type="text" id="nama" name="nama" value="<?php echo $data['nama']; ?>" readonly><br>
+    <from method="POST" action="prosesupdateuser.php">
+        <table>
+           <tr>
+                <td>Nama</td>
+                <<td><input type="text" name="nama" value="<?php echo $nama;?>"></td>
+            </tr> 
 
-            
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username" value="<?php echo $data['username']; ?>"><br>
+            <tr>
+                <td>Username</td>
+                <<td><input type="text" name="username" value="<?php echo $username;?>"></td>
+            </tr> 
 
-            
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" value="<?php echo $data['password']; ?>"><br>
-            
-            <input type="submit" name="update" value="Update" class="button">
-        </form>
-    </section>
+            <tr>
+                <td>Password</td>
+                <<td><input type="text" name="password" value="<?php echo $password;?>"></td>
+            </tr> 
+
+            <tr>
+                <td>level</td>
+                <<td>
+                    <select name="level" id="level" required>
+                    
+                    <option value="user">user</option>
+                     </select>
+                </td>
+            </tr> 
+
+            <tr>
+                <td><input type="hidden" name="userid" value=<?php echo $_GET['id'];?>></td>
+                <td><input type="submit" name="simpan" value="simpan"></td>
+            </tr>
+
+        </table>
+    </from>
 </div>
 </body>
 </html>
+  
+
