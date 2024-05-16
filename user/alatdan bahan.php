@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-            <nav>
-                <ul class="waru3">
-                    <ul class="biasa">
-                        <li><a href="TA2DASPROG.php">Beranda</a></li>
-                        <li><a href="alatdan bahan.php">Tentang Kami</a></li>
-                        <li><a href="layanan.php">Layanan</a></li>
-                    </ul>
-                    <ul class="WARU">
-                        <p class="waru2" href="#" class="logo"><span class="waru4">CUCI</span>MOBIL</p>
-                    </ul>
+<header>
+        <nav>
+            <ul class="waru3">
+                <ul class="biasa">
+                    <li><a href="TA2DASPROG.php">Beranda</a></li>
+                    <li><a href="layanan.php">Layanan</a></li>
+                    <li><a href="transaction.php">transaksi</a></li>
                 </ul>
-            </nav>  
-    </header>
+                <ul class="WARU">
+                    <p class="waru2" href="#" class="logo"><span class="waru4">CUCI</span>MOBIL</p>
+                </ul>
+            </ul>
+        </nav>
+    </header>   
     <div class="background">
         <div class="feature44">
             <img src="img/Screenshot 2023-09-20 211056.png" width="350" height="280" alt="Feature 2" class="gambar-biodata">

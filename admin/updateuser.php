@@ -1,23 +1,28 @@
 <?php 
-
 include ("koneksi1.php");
 
-//kalau tidak ada id di query string
+// Jika tidak ada id di query string
 if(!isset($_GET['id'])){
     header('Location: user.php');
+    exit; // Menghentikan eksekusi script jika tidak ada id
 }
+
 $userid = $_GET['id'];
 
-// Fetech usser data based on id
+// Mengambil data user berdasarkan id
 $result = mysqli_query($mysqli, "SELECT * FROM user WHERE userid=$userid");
 
-while($user_data = mysqli_fetch_array($result))
-{
-    $nama =  $user_data['nama'];
-    $username =  $user_data['username'];
-    $password =  $user_data['password'];
-    $level =  $user_data['level'];
+// Memeriksa apakah data ditemukan
+if(mysqli_num_rows($result) === 0) {
+    echo "Data user tidak ditemukan.";
+    exit; // Menghentikan eksekusi script jika data tidak ditemukan
 }
+
+$user_data = mysqli_fetch_array($result);
+$nama = $user_data['nama'];
+$username = $user_data['username'];
+$password = $user_data['password'];
+$level = $user_data['level'];
 
 ?>
 <!DOCTYPE html>
@@ -34,42 +39,39 @@ while($user_data = mysqli_fetch_array($result))
     <header>
         <h1 class="title">Update User</h1>
     </header>
-    <from method="POST" action="prosesupdateuser.php">
+    <form method="POST" action="prosesupdateuser.php">
         <table>
-           <tr>
+            <tr>
                 <td>Nama</td>
-                <<td><input type="text" name="nama" value="<?php echo $nama;?>"></td>
+                <td><input type="text" name="nama" value="<?php echo $nama;?>"></td>
             </tr> 
 
             <tr>
                 <td>Username</td>
-                <<td><input type="text" name="username" value="<?php echo $username;?>"></td>
+                <td><input type="text" name="username" value="<?php echo $username;?>"></td>
             </tr> 
 
             <tr>
                 <td>Password</td>
-                <<td><input type="text" name="password" value="<?php echo $password;?>"></td>
+                <td><input type="text" name="password" value="<?php echo $password;?>"></td>
             </tr> 
 
             <tr>
-                <td>level</td>
-                <<td>
+                <td>Level</td>
+                <td>
                     <select name="level" id="level" required>
-                    
-                    <option value="user">user</option>
-                     </select>
+                        <option value="user" <?php if($level == 'user') echo 'selected'; ?>>User</option>
+                        <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
+                    </select>
                 </td>
             </tr> 
 
             <tr>
-                <td><input type="hidden" name="userid" value=<?php echo $_GET['id'];?>></td>
-                <td><input type="submit" name="simpan" value="simpan"></td>
+                <td><input type="hidden" name="userid" value="<?php echo $_GET['id'];?>"></td>
+                <td><input type="submit" name="simpan" value="Simpan"></td>
             </tr>
-
         </table>
-    </from>
+    </form>
 </div>
 </body>
 </html>
-  
-

@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+<header>
         <nav>
             <ul class="waru3">
                 <ul class="biasa">
                     <li><a href="TA2DASPROG.php">Beranda</a></li>
-                    <li><a href="alatdan bahan.php">Teantang kami</a></li>
                     <li><a href="layanan.php">Layanan</a></li>
+                    <li><a href="transaction.php">transaksi</a></li>
                 </ul>
                 <ul class="WARU">
                     <p class="waru2" href="#" class="logo"><span class="waru4">CUCI</span>MOBIL</p>
                 </ul>
             </ul>
         </nav>
-    </header>
+    </header>   
                   
         <div class="j">
             <div class="r">

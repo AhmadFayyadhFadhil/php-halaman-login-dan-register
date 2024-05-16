@@ -1,0 +1,55 @@
+body {
+    background-color: #1f1f1f; 
+    color: #ffffff; 
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px; 
+    background-color: #333; 
+    border-radius: 10px;
+  }
+  
+  .anjay {
+    color: #fffdf9; 
+    font-size: 24px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  td {
+    padding: 5px;
+  }
+  
+  input[type="password"],
+  select {
+    width: calc(100% - 8px); 
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px; 
+    border: 1px solid #666; 
+    background-color: #444; 
+    color: #ffffff; 
+  }
+  
+  input[type="submit"],
+  input[type="reset"] {
+    width: 48%; 
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #201c15; 
+    color: #ffffff; 
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover,
+  input[type="reset"]:hover {
+    background-color: #1e170c; 
+  }
+  

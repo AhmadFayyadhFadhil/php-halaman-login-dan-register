@@ -1,3 +1,10 @@
+body {
+    background-image: url('21 Top Black Matte Edition Cars You Should Check Out.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .navbar {
     background-color: #007bff;
     padding: 10px 0;
@@ -13,7 +20,6 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
-
 }
 
 .navbar-menu li {
@@ -21,7 +27,7 @@
 }
 
 .navbar-menu li a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     padding: 10px 20px;
     transition: background-color 0.3s ease;
@@ -35,7 +41,7 @@
 .user {
     width: 80%;
     margin: 20px auto;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -84,8 +90,7 @@
     background-color: #ddd;
 }
 
-.btn-hapus,
-.btn-update {
+.btn-hapus {
     display: inline-block;
     padding: 5px 10px;
     background-color: #dc3545;
@@ -95,11 +100,8 @@
     margin-right: 5px;
 }
 
-.btn-update {
-    background-color: #17a2b8;
-}
 
-.btn-hapus:hover,
-.btn-update:hover {
+
+.btn-hapus:hover{
     background-color: #c82333;
 }

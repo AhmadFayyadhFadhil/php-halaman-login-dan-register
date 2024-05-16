@@ -3,22 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>landing-page</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Carwash clean</title>
+    <link rel="stylesheet" href="index1.css">
 </head>
 <body>
-    <div class="anjay1">
-        <h1 class="anjay">log-in</h1><br>
-        <form class="form" action="login.php" method="post"> 
-            <input type="text" name="username" placeholder="username">
-            <input type="password" name="password" placeholder="password">
-            <a href="login.php">
-                <button class="button">login</button>
-            </a>
-        </form>
-      <div class="forgot">
-            <a href="register.php">register</a> <a href="#">Forgot password</a>
-      </div>
-    </div> 
+    <header>
+        <nav>
+            <ul class="waru3">
+                <ul class="biasa">
+                    <li><a href="index.php">Beranda</a></li>
+                    <li><a href="index2.php">Layanan</a></li>
+                    <li><a href="index2.php">Log-in</a></li>
+                </ul>
+                <ul class="WARU">
+                    <p class="waru2" href="#" class="logo"><span class="waru4">CUCI</span>MOBIL</p>
+                </ul>
+            </ul>
+        </nav>
+    </header>   
+    
+    <div>
+        <div class="container">
+                <img src="Meet Gran Turismo SPORT - FIA-Blessed PlayStation Spinoff Starts Private Alpha in Paris.jpeg" alt="Gambar" class="gambar">
+                
+                <div class="content">
+                  <h2 class="mambu">Kebersihan yang Mempesona, Mobil Berkilau Sepanjang Hari</h2>
+                  <a href="index2.php" class="btn">LET'S DOIT</a>
+                </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy;WA: 0989898787 || @.Carwash clean || FB: Carwash clean</p>
+    </div>
+
 </body>
 </html>

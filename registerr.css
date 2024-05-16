@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-image: url('21 Top Black Matte Edition Cars You Should Check Out.jpeg');
   margin: 0;
   padding: 0;
 }
@@ -8,7 +8,7 @@ body {
 .register_1 {
   width: 400px;
   margin: 50px auto;
-  background-color: #fff;
+  background-color: #271b1b3a;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -41,7 +41,7 @@ label {
 
 button[type="submit"] {
   width: 100%;
-  background-color: #007bff;
+  background-color: #32333481;
   color: #fff;
   padding: 10px;
   border: none;
@@ -55,6 +55,7 @@ button[type="submit"]:hover {
 }
 
 .login-link {
+  color: white;
   margin-top: 20px;
   text-align: center;
 }

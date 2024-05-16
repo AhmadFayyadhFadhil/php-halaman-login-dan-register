@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman data USER</title>
     <link rel="icon" type="image/png" href="img/logotitle.png">
-    <link rel="stylesheet" href="styleadmin.css">
+    <link rel="stylesheet" href="styleadmin1.css">
 </head>
 <body>
 
@@ -15,7 +15,7 @@
             <ul class="navbar-menu">
                 <li><a href="user.php">USER</a></li>
                 <li><a href="mobil/mobil.php">MOBIL</a></li>
-                <li><a href="#">LAYANAN</a></li>
+                <li><a href="layanan/layanan.php">LAYANAN</a></li>
                 <li><a href="#">TRANSAKSI</a></li>
             </ul>
         </div>
@@ -29,7 +29,7 @@
         <br>
         <table border="1" class="table">
             <tr>
-                <th>User ID</th>
+                <th>No</th>
                 <th>Nama</th>
                 <th>Username</th>
                 <th>Password</th>
