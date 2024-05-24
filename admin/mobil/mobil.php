@@ -16,7 +16,7 @@
                 <li><a href="../user.php">USER</a></li>
                 <li><a href="mobil.php">MOBIL</a></li>
                 <li><a href="../layanan/layanan.php">LAYANAN</a></li>
-                <li><a href="transaction/transaksi.php">TRANSAKSI</a></li>
+                <li><a href="../transactionadmin/transaksiadmin.php">TRANSAKSI</a></li>
             </ul>
         </div>
     </nav>

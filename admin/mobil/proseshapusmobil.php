@@ -1,16 +1,19 @@
 <?php
 include '../koneksi1.php';
 
-$userid = $_GET['id'];
+if(isset($_GET['id'])){
+    $id_mobil = $_GET['id'];
 
+    
+    $hapus = mysqli_query($mysqli, "DELETE FROM mobil WHERE id_mobil = '$id_mobil'") or die(mysqli_error($mysqli));
 
-$hapus = mysqli_query($mysqli, "DELETE FROM mobil WHERE id_mobil = '$userid'") or die(mysqli_error($mysqli));
-
-if($hapus) {
- 
-    header("Location: mobil.php");
-    exit();
+    if($hapus) {
+        
+        exit();
+    } else {
+        echo "Gagal menghapus data mobil.";
+    }
 } else {
-    echo "Gagal menghapus data mobil.";
+    echo "ID mobil tidak ditemukan.";
 }
 ?>

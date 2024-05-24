@@ -90,7 +90,8 @@ body {
     background-color: #ddd;
 }
 
-.btn-hapus {
+.btn-hapus,
+.btn-update {
     display: inline-block;
     padding: 5px 10px;
     background-color: #dc3545;
@@ -100,8 +101,12 @@ body {
     margin-right: 5px;
 }
 
+.btn-update {
+    background-color: #17a2b8;
+}
 
-
-.btn-hapus:hover{
+.btn-hapus:hover,
+.btn-update:hover {
     background-color: #c82333;
 }
+

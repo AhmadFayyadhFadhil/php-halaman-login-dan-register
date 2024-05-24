@@ -23,6 +23,9 @@
 
     <section class="user">
         <h1 class="heading">menu layanan</h1>
+        <br>
+        <a href="tambah_layanan.php" class="btn">Tambah layanan</a>
+        <br>
         
         <br>
         <table border="1" class="table">
@@ -44,7 +47,8 @@
                 <td><?php echo $data['jenis_layanan']; ?></td>
                 <td><?php echo $data['harga_layanan']; ?></td>
                 <td>
-                    <a href="proseshapuslayanan.php?id=<?php echo $data['id_layanan']; ?>" class="btn-hapus">Hapus</a> 
+                    <a href="hapuslayanan.php?id=<?php echo $data['id_layanan']; ?>" class="btn-hapus">Hapus</a> 
+                    <a href='updatelayanan.php?id=<?php echo $data['id_layanan']; ?>' class="btn-update">Update</a>
                 </td>
             </tr>
             <?php } ?>

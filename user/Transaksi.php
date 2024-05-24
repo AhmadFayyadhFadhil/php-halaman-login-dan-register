@@ -1,20 +1,72 @@
 <?php
-            include '../koneksi.php';
-            $query_mysql = mysqli_query($mysqli, "SELECT 'user.nama', 'mobil.plat_mobil', 'layanan.jenis_layanan', 'layanan.harga_layanan', 'layanan.jenis_layanan*layanan.harga_layanan' AS 'total_transaksi'
-            FROM transaksi 
-            JOIN user ON transaksi.userid = 'user.userid'
-            JOIN mobil ON transaksi.id_mobil = 'mobil.id_mobil'
-            JOIN layanan ON transaksi.id_layanan = 'layanan.id_layanan'") or die(mysqli_error($mysqli));
-            $nomor = 1;
-            while($data = mysqli_fetch_array($query_mysql))  
- ?>
+include '../koneksi.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $plat_nomor = $_POST['plat_nomor'];
+    $jenis_mobil = $_POST['jenis_mobil'];
+    $layanan = $_POST['layanan'];
+    $jenis_transaksi = $_POST['jenis_transaksi'];
+    $tanggal_transaksi = $_POST['tanggal_transaksi'];
+
+    $stmt_check = $mysqli->prepare("SELECT id_mobil FROM mobil WHERE plat_mobil = ?");
+    if ($stmt_check === false) {
+        die('Prepare gagal: ' . $mysqli->error);
+    }
+    $stmt_check->bind_param("s", $plat_nomor);
+    $stmt_check->execute();
+    $stmt_check->store_result();
+
+    if ($stmt_check->num_rows == 0) {
+        $stmt_insert_mobil = $mysqli->prepare("INSERT INTO mobil (plat_mobil, jenis_mobil) VALUES (?, ?)");
+        if ($stmt_insert_mobil === false) {
+            die('Prepare gagal: ' . $mysqli->error);
+        }
+        $stmt_insert_mobil->bind_param("ss", $plat_nomor, $jenis_mobil);
+
+        if ($stmt_insert_mobil->execute()) {
+            $id_mobil = $stmt_insert_mobil->insert_id;
+        } else {
+            echo "Error inserting mobil: " . $stmt_insert_mobil->error;
+            exit();
+        }
+
+        $stmt_insert_mobil->close();
+    } else {
+        $stmt_check->bind_result($id_mobil);
+        $stmt_check->fetch();
+    }
+
+    $stmt_check->close();
+
+    $stmt = $mysqli->prepare("INSERT INTO transaksi (plat_mobil, id_mobil, id_layanan, jenis_transaksi, tanggal_transaksi) VALUES (?, ?, ?, ?, ?)");
+    if ($stmt === false) {
+        die('Prepare gagal: ' . $mysqli->error);
+    }
+
+    $stmt->bind_param("siiss", $plat_nomor, $id_mobil, $layanan, $jenis_transaksi, $tanggal_transaksi);
+
+    if ($stmt->execute()) {
+        echo "Transaksi baru berhasil ditambahkan";
+        header("Location: Cuci sekarang.php"); // Redirect ke halaman admin
+        exit();
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
+}
+
+$query_mysql_mobil = mysqli_query($mysqli, "SELECT * FROM mobil") or die(mysqli_error($mysqli));
+$query_mysql_layanan = mysqli_query($mysqli, "SELECT * FROM layanan") or die(mysqli_error($mysqli));
+?>
+
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Input Transaction</title>
+  <title>Input Transaksi</title>
   <link rel="stylesheet" href="transaction.css">
 </head>
 <body>
@@ -25,7 +77,7 @@
             <ul class="biasa">
                 <li><a href="TA2DASPROG.php">Beranda</a></li>
                 <li><a href="layanan.php">Layanan</a></li>
-                <li><a href="transaksi.php">transaksi</a></li>
+                <li><a href="transaksi.php">Transaksi</a></li>
             </ul>
             <ul class="WARU">
                 <p class="waru2" href="#" class="logo"><span class="waru4">CUCI</span>MOBIL</p>
@@ -35,57 +87,43 @@
 </header>   
 
 <div>
-  <center class="anjay"><b>Input Transaction</b></center>
+  <center class="anjay"><b>Input Transaksi</b></center>
 </div>
    
 <div class="container">
   <form method="post" action="">
-
     <hr>
-
     <table>
       <tr>
         <td>Plat mobil</td>
-        <td>: <input type="text" name="plat_mobil" required></td>
+        <td>: <input type="text" name="plat_nomor" required></td>
       </tr>
       <tr>
         <td>Jenis mobil</td>
         <td>:
           <select name="jenis_mobil" required>
-                    <option value="Sedan">Sedan</option>
-                    <option value="Sport Utility Vehicle [SUV]">Sport Utility Vehicle[SUV]</option>
-                    <option value="Multi Purpose Vehicle [MPV]">Multi Purpose Vehicle [MPV]</option>
-                    <option value="hatchback">hatchback</option>
-                    <option value="coupe">coupe</option>
-                    <option value="convertible">convertible</option>
-                    <option value="mobil listrik">mobil listrik</option>
-                    <option value="mobil hybrid">mobil hybrid</option>
-                    <option value="truk">truk</option>
-                    <option value="pick up">pick up</option>
-                    <option value="Sport">Sport</option>
-                    <option value="F1">F1</option>
-
+            <?php while($data = mysqli_fetch_array($query_mysql_mobil)) { ?>
+              <option value="<?php echo $data['id_mobil']; ?>"><?php echo $data['jenis_mobil']; ?></option>
+            <?php } ?>
           </select>
         </td>
       </tr>
       <tr>
         <td>Daftar layanan</td>
-        <td>:         
-            <select name="layanan" required>
-                    <option value="1">CUCI STEAM Rp 250.000 </option>
-                    <option value="2">CUCI INTERIOR Rp 200.00</option>
-                    <option value="3">SERVICE Rp 150.000</option>
-            </select>
-
+        <td>:      
+          <select name="layanan" required>
+            <?php while($data = mysqli_fetch_array($query_mysql_layanan)) { ?>
+              <option value="<?php echo $data['id_layanan']; ?>"><?php echo $data['jenis_layanan']; ?></option>
+            <?php } ?>
+          </select>
         </td>
       </tr>
       <tr>
         <td>Jenis transaksi</td>
         <td>:
           <select name="jenis_transaksi" required>
-            <option value="Cash">Cash</option>
-            <option value="Debit">Debit</option>
-            <option value="Credit">Credit</option>
+            <option value="debit">Debit</option>
+            <option value="cash">Cash</option>
           </select>
         </td>
       </tr>
@@ -94,14 +132,13 @@
         <td>: <input type="date" name="tanggal_transaksi" placeholder="yyyy-mm-dd" required></td>
       </tr>
     </table>
-
     <hr>
-
     <input type="submit" value="Kirim">
     <input type="reset" value="Reset">
-
   </form>
 </div>
+
+
 
 </body>
 </html>
