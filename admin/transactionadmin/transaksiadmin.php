@@ -35,15 +35,15 @@
             </tr>
             <?php
             include '../koneksi1.php';
-            $query_mysql = mysqli_query($mysqli, "SELECT transaksi.id_transaksi, transaksi.tanggal_transaksi, transaksi.jenis_transaksi, transaksi.userid, transaksi.id_mobil, transaksi.id_layanan, mobil.plat_mobil, mobil.jenis_mobil, layanan.jenis_layanan, layanan.harga_layanan
+
+            $query_mysql = mysqli_query($mysqli, "SELECT transaksi.id_transaksi, transaksi.tanggal_transaksi, transaksi.jenis_transaksi, transaksi.userid, transaksi.id_mobil, transaksi.id_layanan, mobil.plat_mobil, layanan.harga_layanan
             FROM transaksi 
-            JOIN user ON transaksi.userid = user.userid
             JOIN mobil ON transaksi.id_mobil = mobil.id_mobil
             JOIN layanan ON transaksi.id_layanan = layanan.id_layanan") or die(mysqli_error($mysqli));
-            $nomor = 1;
-            while($data = mysqli_fetch_array($query_mysql)) {
-                // Hitung total transaksi dari harga layanan, sesuaikan jika perhitungannya berbeda
-                $total_transaksi = $data['harga_layanan']; // Jika tidak ada perhitungan lain, gunakan harga_layanan langsung
+
+            if(mysqli_num_rows($query_mysql) > 0) {
+                while($data = mysqli_fetch_array($query_mysql)) {
+                    $total_transaksi = $data['harga_layanan'];
             ?>
             <tr>
                 <td><?php echo $data['id_transaksi']; ?></td>
@@ -55,15 +55,20 @@
                 <td><?php echo $data['id_mobil']; ?></td>
                 <td><?php echo $data['id_layanan']; ?></td>
                 <td>
-                    <a href="hapustransaksi.php?id=<?php echo $data['id_transaksi']; ?>" class="btn-hapus">Hapus</a>
+                    <a href="proseshapustransaksi.php?id=<?php echo $data['id_transaksi']; ?>" class="btn-hapus">Hapus</a>
                 </td>
             </tr>
-            <?php } ?>
+            <?php
+                }
+            } else {
+                echo "<tr><td colspan='9'>Tidak ada data ditemukan</td></tr>";
+            }
+            ?>
         </table>
         <br>
         <br>
         <a href="../index.php" class="btn">Log Out</a>
     </section>
-    <script src="main.js"></script>
+    
 </body>
 </html>
