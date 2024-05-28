@@ -1,5 +1,5 @@
 <?php
-include '../koneksi1.php';
+include '../../koneksi.php';
 
 // Pastikan id_layanan sudah ada di query string
 if(isset($_GET['id'])){

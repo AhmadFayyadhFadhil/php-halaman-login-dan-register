@@ -1,5 +1,5 @@
 <?php
-include("koneksi1.php");
+include("../koneksi.php");
 
 // Memeriksa apakah data yang diperlukan sudah disubmit
 if(isset($_POST['simpan'])) {

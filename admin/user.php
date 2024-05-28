@@ -36,7 +36,7 @@
                 <th>Action</th> 
             </tr>
             <?php
-            include 'koneksi1.php';
+            include '../koneksi.php';
             $query_mysql = mysqli_query($mysqli, "SELECT * FROM user") or die(mysqli_error($mysqli));
             $nomor = 1;
             while($data = mysqli_fetch_array($query_mysql)) { 

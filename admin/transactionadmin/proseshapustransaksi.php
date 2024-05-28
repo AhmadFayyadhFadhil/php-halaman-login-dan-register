@@ -1,5 +1,5 @@
 <?php
-include '../koneksi1.php';
+include '../../koneksi.php';
 
 if(isset($_GET['id'])){
     $id_transaksi = $_GET['id'];  // Ubah nama variabel ke $id_transaksi

@@ -27,7 +27,7 @@
             $jenis_layanan = $_POST['jenis_layanan'];
             $harga_layanan = $_POST['harga_layanan'];
 
-            include "../koneksi1.php";
+            include "../../koneksi.php";
 
             $result = mysqli_query($mysqli, "INSERT INTO layanan (jenis_layanan, harga_layanan) VALUES ('$jenis_layanan', '$harga_layanan')");
 

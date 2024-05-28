@@ -1,5 +1,5 @@
 <?php 
-include ("koneksi1.php");
+include ("../koneksi.php");
 
 // Jika tidak ada id di query string
 if(!isset($_GET['id'])){

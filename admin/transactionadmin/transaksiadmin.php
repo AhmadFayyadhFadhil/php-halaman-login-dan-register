@@ -34,7 +34,7 @@
                 <th>Delete</th>
             </tr>
             <?php
-            include '../koneksi1.php';
+            include '../../koneksi.php';
 
             $query_mysql = mysqli_query($mysqli, "SELECT transaksi.id_transaksi, transaksi.tanggal_transaksi, transaksi.jenis_transaksi, transaksi.userid, transaksi.id_mobil, transaksi.id_layanan, mobil.plat_mobil, layanan.harga_layanan
             FROM transaksi 
