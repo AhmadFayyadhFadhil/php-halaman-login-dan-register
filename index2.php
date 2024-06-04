@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>landing-page</title>
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style1x.css">
 </head>
 <body>
     <div class="anjay1">

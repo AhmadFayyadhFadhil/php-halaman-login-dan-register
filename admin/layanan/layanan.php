@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dafrat layanan</title>
-    <link rel="icon" type="image/png" href="img/logotitle.png">
-    <link rel="stylesheet" href="layanan.css">
+    <title>Daftar Layanan</title>
+    <link rel="stylesheet" href="layananada.css">
 </head>
 <body>
+    <?php
+        include "../../koneksi.php";
 
+        if (isset($_GET['id_layanan'])) {
+            $id_layanan = htmlspecialchars($_GET["id_layanan"]);
 
-<nav class="navbar">
+            $sql = "DELETE FROM layanan WHERE id_layanan='$id_layanan'";
+            $hasil = mysqli_query($mysqli, $sql);
+
+            if ($hasil) {
+                echo "<div class='alert alert-success'>Data berhasil dihapus.</div>";
+            } else {
+                echo "<div class='alert alert-danger'>Data gagal dihapus.</div>";
+            }
+        }
+    ?>
+
+    <nav class="navbar">
         <div class="container">
             <ul class="navbar-menu">
                 <li><a href="../user.php">USER</a></li>
@@ -21,43 +35,55 @@
         </div>
     </nav>
 
-    <section class="user">
-        <h1 class="heading">menu layanan</h1>
-        <br>
-        <a href="tambah_layanan.php" class="btn">Tambah layanan</a>
-        <br>
-        
-        <br>
-        <table border="1" class="table">
-            <tr>
-                <th>No</th>
-                <th>jenis_layanan</th>
-                <th>harga_layanan</th>
-                <th>action</th>
-                
+    <h1 class="judul">Input Data Layanan</h1>
+    <br>
+    <a href="tambahlayanan.php" class="btn">Tambah layanan</a>
+    <br>
+
+    <table class="my-3 table table-bordered">
+        <thead>
+            <tr class="table-primary">
+                <th class="no-col">No</th>
+                <th class="nama-col">Jenis Layanan</th>
+                <th class="harga-col">Harga</th>
+                <th class="image-col">Image</th>
+                <th class="deskripsi-col">Deskripsi</th>
+                <th class="website-col">Website</th>
+                <th>Aksi</th>
             </tr>
+        </thead>
+        <tbody>
             <?php
-            include '../../koneksi.php';
-            $query_mysql = mysqli_query($mysqli, "SELECT * FROM layanan") or die(mysqli_error($mysqli));
-            $nomor = 1;
-            while($data = mysqli_fetch_array($query_mysql)) { 
+            $sql = "SELECT * FROM layanan";
+            $hasil = mysqli_query($mysqli, $sql);
+            $no = 0;
+            while ($data = mysqli_fetch_array($hasil)) {
+                $no++;
             ?>
             <tr>
-                <td><?php echo $data['id_layanan']; ?></td>
-                <td><?php echo $data['jenis_layanan']; ?></td>
-                <td><?php echo $data['harga_layanan']; ?></td>
+                <td class="no-col"><?php echo $no; ?></td>
+                <td class="nama-col"><?php echo $data["jenis_layanan"]; ?></td>
+                <td class="harga-col"><?php echo $data["harga"]; ?></td>
+                <td class="image-col">
+                         <?php
+                             $gambarPath = "uploaded_img/" . $data["gambar"];
+                             echo $gambarPath;
+                         ?>
+                        <br>
+                        <img src="<?php echo $gambarPath; ?>" alt="Gambar layanan" width="100">
+                </td>
+                <td class="deskripsi-col"><?php echo nl2br($data["deskripsi"]); ?></td>
+                <td class="website-col"><?php echo $data["website"]; ?></td>
                 <td>
+                    <a href="updatelayanan.php?id=<?php echo $data['id_layanan']; ?>" class="btn-update">Update</a>
+                    <br><br>
                     <a href="hapuslayanan.php?id=<?php echo $data['id_layanan']; ?>" class="btn-hapus">Hapus</a> 
-                    <a href='updatelayanan.php?id=<?php echo $data['id_layanan']; ?>' class="btn-update">Update</a>
                 </td>
             </tr>
-            <?php } ?>
-        </table>
-        <br>
-        <br>
-       
-    </section>
-
-    
+            <?php
+            }
+            ?>
+        </tbody>
+    </table>
 </body>
 </html>

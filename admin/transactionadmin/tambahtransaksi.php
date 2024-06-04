@@ -1,5 +1,5 @@
 <?php
-include '../koneksi.php';
+include '../../koneksi.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $plat_nomor = $_POST['plat_nomor'];
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($stmt->execute()) {
         echo "Transaksi baru berhasil ditambahkan";
-        header("Location: terimakasih.php"); // Redirect ke halaman admin
+        header("Location: transaksiadmin.php"); // Redirect ke halaman admin
         exit();
     } else {
         echo "Error: " . $stmt->error;

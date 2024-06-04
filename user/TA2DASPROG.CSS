@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 0;
+}
+
+nav {
+    background-color: #000000; /* Warna latar belakang navbar */
+}
+
+.biasa {
+    width: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+    list-style-type: none;
+}
+
+a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #ddd; /* Warna latar belakang saat cursor diarahkan ke link */
+    color: black;
+}
+
+.waru4 {
+    color: yellow;
+    font-size: 30px;
+}
+
+.logo {
+    flex-direction: row;
+}
+
+.waru3 {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.WARU {
+    display: flex;
+    margin-right: 780px;
+    font-size: 20px;
+    padding: 8px;
+}
+
+.waru2 {
+    color: #ddd;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px); /* Mengurangi tinggi header */
+    background: url('../user/backgroundlandingpage.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    max-width: 40%;
+    padding: 20px;
+    text-align: left;
+}
+
+.mambu {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e6b800;
+}
+
+.footer-bottom {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

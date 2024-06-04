@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Tambahkan ini untuk memastikan padding dan border dimasukkan dalam lebar dan tinggi elemen */
+}
+
+body, html {
+    height: 100%; /* Pastikan body dan html memiliki tinggi 100% */
+}
+
+header {
+    padding: 0;
+}
+
+nav {
+    background-color: #000000; /* Warna latar belakang navbar */
+}
+
+.biasa {
+    width: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+    list-style-type: none;
+}
+
+a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #ddd; /* Warna latar belakang saat cursor diarahkan ke link */
+    color: black;
+}
+
+.waru4 {
+    color: yellow;
+    font-size: 30px;
+}
+
+.logo {
+    flex-direction: row;
+}
+
+.waru3 {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.WARU {
+    display: flex;
+    margin-right: 780px;
+    font-size: 20px;
+    padding: 8px;
+}
+
+.waru2 {
+    color: #ddd;
+}
+
+.j {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Mengubah justify-content menjadi center */
+    margin: 0 auto;
+    padding: 60px;
+    max-width: 1200px;
+    height: 100vh; /* Tambahkan ini untuk memastikan div .j mengambil tinggi penuh dari viewport */
+    background-color: #f5f5f5; /* Opsional, menambahkan warna latar belakang untuk kontras */
+}
+
+.r {
+    flex: 1;
+    text-align: center; /* Agar teks berada di tengah secara horizontal */
+}
+
+.judulr {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.paragrafr {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.Lah {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    margin-top: 20px; /* Add some space above the box */
+}
+
+.Lah1 {
+    display: inline-block;
+    padding: 10px 20px; /* Padding inside the box */
+    background-color: #007bff; /* Background color of the box */
+    color: #ffffff; /* Text color */
+    text-decoration: none; /* Removes underline from the link */
+    border-radius: 10px; /* Rounds the corners of the box */
+    text-align: center; /* Centers the text inside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the box */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.Lah1:hover {
+    background-color: #0056b3; /* Background color on hover */
+}
+
+.Lah2 {
+    font-weight: bold; /* Makes the "CEK" text bold */
+    display: block; /* Ensures the "CEK" text is on its own line */
+    font-size: 18px; /* Font size for the "CEK" text */
+}
+
+
+.image-container1 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.image-container1 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.footer-bottom {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}

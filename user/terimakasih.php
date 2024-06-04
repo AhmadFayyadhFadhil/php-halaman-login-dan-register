@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carwash clean</title>
-    <link rel="stylesheet" href="cuci.css">
+    <link rel="stylesheet" href="terimakasih.css">
 </head>
 <body>
 <header>
@@ -24,19 +24,17 @@
                   
     <div class="j">
         <div class="r">
-            <h1 class="judulr">Dari kami</h1>
-            <p class="paragrafr">Kebersihan memang penting, maka dari itu kami menghimbau supaya menghindari adanya hal-hal yang tidak diinginkan, hidup sehat dan bersih diawali dari diri sendiri, maka dari itu kami
-                dari Carwash Clean berterimakasih karena sudah datang ke website kami.
-            </p>
+            <h1 class="judulr">TERIMA KASIH</h1>
+            <p class="paragrafr">Terimakasih karena sudah memesan layanan dari sebagian menu layanan kami, pekerja akan segera dikirim, nikmati waktu tanpa harus memikirkan kebersihan kendaraan anda</p>
+
+            <div class="Lah">
+             <a href="riwayat_transaksi.php" class="Lah1"><span class="Lah2">CEK</span>pesanan</a>
+            </div>
+
         </div>
         <div class="image-container1">
             <img src="../user/logomobidicucisekarang.png" alt="Carwash">
         </div>
     </div>
-
-    <div class="footer-bottom">
-        <p>&copy;WA: 0989898787 || @.Carwash clean || FB: Carwash clean</p>
-    </div>
-
 </body>
 </html>

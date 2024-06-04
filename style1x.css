@@ -1,10 +1,14 @@
 body {
     background-image: url('Premium Photo _ Front view of a generic and brandless moder car.jpeg');
-    color: #fff; /* Warna teks putih */
-    font-family: Arial, sans-serif; /* Jenis huruf */
-    margin: 0; /* Menghapus margin */
-    padding: 0; /* Menghapus padding */
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    color: #fff; 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
 }
+
 
 .anjay1 {
     width: 100%;
@@ -32,21 +36,21 @@ input[type="password"] {
     margin-bottom: 10px;
     border-radius: 5px;
     border: none;
-    background-color: #333; /* Warna latar belakang input */
-    color: #fff; /* Warna teks input */
+    background-color: #333; 
+    color: #fff; 
 }
 
 .button {
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
-    background-color: #4CAF50; /* Warna tombol */
-    color: #fff; /* Warna teks tombol */
+    background-color: #4CAF50; 
+    color: #fff; 
     cursor: pointer;
 }
 
 .button:hover {
-    background-color: #45a049; /* Warna tombol saat dihover */
+    background-color: #45a049; 
 }
 
 .forgot {
@@ -55,10 +59,10 @@ input[type="password"] {
 }
 
 .forgot a {
-    color: #ccc; /* Warna teks tautan */
-    text-decoration: none; /* Menghapus garis bawah tautan */
+    color: #ccc; 
+    text-decoration: none; 
 }
 
 .forgot a:hover {
-    color: #fff; /* Warna teks tautan saat dihover */
+    color: #fff; 
 }

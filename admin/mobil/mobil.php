@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data mobil</title>
     <link rel="icon" type="image/png" href="img/logotitle.png">
-    <link rel="stylesheet" href="mobil.css">
+    <link rel="stylesheet" href="mobil1.css">
 </head>
 <body>
 
@@ -23,13 +23,16 @@
 
     <section class="user">
         <h1 class="heading">Data mobil</h1>
+        <br>
+        <a href="../mobil/Ttambahdatamob.php" class="btn">Tambah Data mobil</a>
+        <br>
         
         <br>
         <table border="1" class="table">
             <tr>
                 <th>No</th>
-                <th>jenis_mobil</th>
-                <th>plat_mobil</th>
+                <th>jenis mobil</th>
+                <th>plat mobil</th>
                 <th>action</th>
             </tr>
             <?php
@@ -39,11 +42,12 @@
             while($data = mysqli_fetch_array($query_mysql)) { 
             ?>
             <tr>
-                <td><?php echo $data['id_mobil']; ?></td>
+                <td><?php echo $nomor++; ?></td>
                 <td><?php echo $data['jenis_mobil']; ?></td>
                 <td><?php echo $data['plat_mobil']; ?></td>
                 <td>
                     <a href="proseshapusmobil.php?id=<?php echo $data['id_mobil']; ?>" class="btn-hapus">Hapus</a> 
+                    <a href='updatemob.php?id=<?php echo $data['id_mobil']; ?>' class="btn-update">Update 
                 </td>
             </tr>
             <?php } ?>

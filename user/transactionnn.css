@@ -1,10 +1,10 @@
 body {
-    background-color: #1f1f1f; 
+    background-color: #000000; 
     color: #ffffff; 
     font-family: Arial, sans-serif;
   }
 
- nav {
+  nav {
     background-color: #000000; /* Warna latar belakang navbar */
 }
 
@@ -30,18 +30,19 @@ a {
     text-align: center;
     padding: 15px;
     text-decoration: none;
-    
 }
 
 a:hover {
     background-color: #ddd; /* Warna latar belakang saat cursor diarahkan ke link */
-    color: black;}
+    color: black;
+}
+
 .waru4 {
     color: yellow;
     font-size: 30px;
 }
 
-.logo{
+.logo {
     flex-direction: row;
 }
 
@@ -50,8 +51,6 @@ a:hover {
     flex-direction: row-reverse;
 }
 
-
-
 .WARU {
     display: flex;
     margin-right: 780px;
@@ -59,19 +58,17 @@ a:hover {
     padding: 8px;
 }
 
-.waru2{
+.waru2 {
     color: #ddd;
 }
 
-.footer-bottom{
-    margin-top: 0px;
-    text-align: center;
-    background-color: #000000;
-}
-
-.footer-bottom p {
-    font-size: 0.8em;
-    color: #ddd;
+.footer-bottom {
+  background-color: #000000; /* Warna latar belakang footer */
+  color: #fff; /* Warna teks footer */
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  margin-top: auto; /* Membuat footer tetap di bagian bawah */
 }
 
   

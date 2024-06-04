@@ -1,5 +1,5 @@
 <?php
-include '../koneksi.php';
+include '../../koneksi.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $plat_nomor = $_POST['plat_nomor'];
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($stmt->execute()) {
         echo "Transaksi baru berhasil ditambahkan";
-        header("Location: terimakasih.php"); // Redirect ke halaman admin
+        header("Location: mobil.php"); // Redirect ke halaman admin
         exit();
     } else {
         echo "Error: " . $stmt->error;
@@ -71,7 +71,7 @@ $query_mysql_user = mysqli_query($mysqli, "SELECT * FROM user") or die(mysqli_er
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Input Transaksi</title>
-  <link rel="stylesheet" href="tambahdata.css">
+  <link rel="stylesheet" href="Ttambahdatamob.css">
 </head>
 <body>
 
@@ -79,9 +79,8 @@ $query_mysql_user = mysqli_query($mysqli, "SELECT * FROM user") or die(mysqli_er
     <nav>
         <ul class="waru3">
             <ul class="biasa">
-                <li><a href="TA2DASPROG.php">Beranda</a></li>
-                <li><a href="layanan.php">Layanan</a></li>
-                <li><a href="transaksi.php">Transaksi</a></li>
+                <li><a href="mobil.php">BACK</a></li>
+                
             </ul>
             <ul class="WARU">
                 <p class="waru2" href="#" class="logo"><span class="waru4">CUCI</span>MOBIL</p>
