@@ -3,51 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrasi</title>
-    <link rel="stylesheet" href="registerrr.css">
+    <title>Daftar Layanan</title>
+    <link rel="stylesheet" href="layananada.css">
 </head>
 <body>
-<div class="register_1">
-    <h2>Registrasi</h2>
-    <form action= "register.php" method = "post">
-     <div class="reregist">
-        <label for="username">Nama:</label>
-        <input type="text" class="form-control" id="nama" name="nama" required>
-      </div>
+    <?php
+        include "../../koneksi.php";
 
-      <div class="reregisteer1">
-        <label for="username">Username:</label>
-        <input type="text" class="form-control" id="username" name="username" required>
-      </div>
+        if (isset($_GET['id_layanan'])) {
+            $id_layanan = htmlspecialchars($_GET["id_layanan"]);
 
-      <div class="reregister2">
-        <label for="password">Password:</label>
-        <input type="password" class="form-control" id="password" name="password" required>
-      </div>
+            $sql = "DELETE FROM layanan WHERE id_layanan='$id_layanan'";
+            $hasil = mysqli_query($mysqli, $sql);
 
-      <button  name="submit" type="submit" >Daftar</button>
+            if ($hasil) {
+                echo "<div class='alert alert-success'>Data berhasil dihapus.</div>";
+            } else {
+                echo "<div class='alert alert-danger'>Data gagal dihapus.</div>";
+            }
+        }
+    ?>
 
-      <?php
-        
-        if(isset($_POST['submit'])) {
-          $nama= $_POST['nama'];
-          $username = $_POST['username'];
-          $password = $_POST['password'];
-          $level = "user";
+    <nav class="navbar">
+        <div class="container">
+            <ul class="navbar-menu">
+                <li><a href="../user.php">USER</a></li>
+                <li><a href="../mobil/mobil.php">MOBIL</a></li>
+                <li><a href="layanan.php">LAYANAN</a></li>
+                <li><a href="../transactionadmin/transaksiadmin.php">TRANSAKSI</a></li>
+            </ul>
+        </div>
+    </nav>
 
-          include "koneksi.php";
+    <h1 class="judul">Input Data Layanan</h1>
+    <br>
+    <a href="tambahlayanan.php" class="btn">Tambah layanan</a>
+    <br>
 
-
-
-          $result = mysqli_query($mysqli, "INSERT INTO user(nama,username,password,level)
-          VALUES('$nama','$username','$password','$level')");
-
-          header("location:index.php");
-      }
-      ?>   </form>
-    <div class="login-link">
-      Sudah punya akun? <a href="index.php">Masuk disini</a>
-    </div>
-  </div>
+    <table class="my-3 table table-bordered">
+        <thead>
+            <tr class="table-primary">
+                <th class="no-col">No</th>
+                <th class="nama-col">Jenis Layanan</th>
+                <th class="harga-col">Harga</th>
+                <th class="image-col">Image</th>
+                <th class="deskripsi-col">Deskripsi</th>
+                <th class="website-col">Website</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $sql = "SELECT * FROM layanan";
+            $hasil = mysqli_query($mysqli, $sql);
+            $no = 0;
+            while ($data = mysqli_fetch_array($hasil)) {
+                $no++;
+            ?>
+            <tr>
+                <td class="no-col"><?php echo $no; ?></td>
+                <td class="nama-col"><?php echo htmlspecialchars($data["jenis_layanan"]); ?></td>
+                <td class="harga-col"><?php echo htmlspecialchars($data["harga"]); ?></td>
+                <td class="image-col">
+                    <?php
+                        $gambarPath = "uploaded_img/" . htmlspecialchars($data["gambar"]);
+                    ?>
+                    <img src="<?php echo $gambarPath; ?>" alt="Gambar layanan" width="100">
+                </td>
+                <td class="deskripsi-col"><?php echo nl2br(htmlspecialchars($data["deskripsi"])); ?></td>
+                <td class="website-col"><?php echo htmlspecialchars($data["website"]); ?></td>
+                <td>
+                    <a href="updatelayanan.php?id=<?php echo htmlspecialchars($data['id_layanan']); ?>" class="btn-update">Update</a>
+                    <br><br>
+                    <a href="hapuslayanan.php?id=<?php echo htmlspecialchars($data['id_layanan']); ?>" class="btn-hapus">Hapus</a> 
+                </td>
+            </tr>
+            <?php
+            }
+            ?>
+        </tbody>
+    </table>
 </body>
 </html>

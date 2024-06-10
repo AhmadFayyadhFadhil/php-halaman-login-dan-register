@@ -48,7 +48,7 @@
             <label for="jenis_layanan">Jenis Layanan</label>
             <input type="text" name="jenis_layanan" required>
             <label for="harga">Harga</label>
-            <input type="number" step="0.01" name="harga" required>
+            <input type="text" step="0.01" name="harga" required>
             <label for="gambar">Gambar</label>
             <input type="file" name="gambar" required>
             <label for="deskripsi">Deskripsi</label>

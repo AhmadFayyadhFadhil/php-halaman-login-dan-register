@@ -121,6 +121,11 @@ h1 {
     align-items: center;
 }
 
+.harga {
+    font-size: 1.2em;
+    color: #28a745;
+}
+
 .card a {
     display: inline-block;
     margin-top: auto; /* Pushes the link to the bottom of the card */
@@ -137,10 +142,8 @@ h1 {
 }
 
 .footer-bottom {
-
     display: flex;
     justify-content: center;
     align-items: center;
     color: #ffffff;
-
 }

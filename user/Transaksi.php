@@ -71,7 +71,7 @@ $query_mysql_user = mysqli_query($mysqli, "SELECT * FROM user") or die(mysqli_er
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Input Transaksi</title>
-  <link rel="stylesheet" href="tambahdata.css">
+  <link rel="stylesheet" href="transactionnn.css">
 </head>
 <body>
 

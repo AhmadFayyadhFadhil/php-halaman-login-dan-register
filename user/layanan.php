@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carwash clean</title>
-    <link rel="stylesheet" href="layanan1111.css">
+    <link rel="stylesheet" href="layanan2.css">
 </head>
 <body>
     
@@ -36,17 +36,26 @@
     <div class="card">
         <div class="card-image">
             <?php 
-
             if (file_exists($imagePath)) {
                 echo '<img src="' . $imageURL . '" alt="' . $data['jenis_layanan'] . '">';
             } else {
                 echo '<img src="default_image.png" alt="Default Image">';
-
             }
             ?>
         </div>
         <h2><?php echo $data['jenis_layanan']; ?></h2>
         <p><?php echo $data['deskripsi']; ?></p>
+        <p class="harga">
+            Harga: 
+            <?php 
+            // Cek apakah harga adalah angka atau tidak
+            if (is_numeric($data['harga'])) {
+                echo 'Rp' . number_format($data['harga'], 0, ',', '.');
+            } else {
+                echo $data['harga'];
+            }
+            ?>
+        </p>
         <a href="<?php echo $data['website']; ?>">Read More</a>
     </div>
     <?php } ?>

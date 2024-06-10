@@ -38,12 +38,13 @@
             <?php
             include '../../koneksi.php';
 
-            // Query untuk mengambil data transaksi beserta harga layanan
-            $query_mysql = mysqli_query($mysqli, "SELECT transaksi.id_transaksi, transaksi.tanggal_transaksi, transaksi.jenis_transaksi, user.username, transaksi.plat_mobil, mobil.jenis_mobil, layanan.harga, transaksi.total_transaksi,  layanan.jenis_layanan
+            // Query untuk mengambil data transaksi beserta harga layanan, diurutkan dari yang terbaru
+            $query_mysql = mysqli_query($mysqli, "SELECT transaksi.id_transaksi, transaksi.tanggal_transaksi, transaksi.jenis_transaksi, user.username, transaksi.plat_mobil, mobil.jenis_mobil, layanan.harga, transaksi.total_transaksi, layanan.jenis_layanan
             FROM transaksi 
             JOIN mobil ON transaksi.id_mobil = mobil.id_mobil
             JOIN layanan ON transaksi.id_layanan = layanan.id_layanan
-            JOIN user ON transaksi.userid = user.userid") or die(mysqli_error($mysqli));
+            JOIN user ON transaksi.userid = user.userid
+            ORDER BY transaksi.tanggal_transaksi DESC") or die(mysqli_error($mysqli));
 
             $nomor = 1; 
             if(mysqli_num_rows($query_mysql) > 0) {
